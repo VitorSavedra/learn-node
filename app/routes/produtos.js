@@ -8,7 +8,7 @@ module.exports = function (app) {
         var connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: '',
+            password: 'test',
             database: 'projetoNode'
         });
         
