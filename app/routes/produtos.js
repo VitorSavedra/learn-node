@@ -14,7 +14,7 @@ module.exports = function (app) {
         
         // Consulta no banco de dados.
         connection.query('SELECT * FROM livros', function(err, results){
-            res.send(results);
+            res.render('produtos/lista',{lista:results});
         });
 
         connection.end();
