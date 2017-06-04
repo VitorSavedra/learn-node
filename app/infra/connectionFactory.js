@@ -9,6 +9,7 @@ function createDBConnection() {
     });
 }
 
+// Wrapper.
 module.exports = function(){
     return createDBConnection;
 }
