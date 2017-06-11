@@ -3,10 +3,10 @@ module.exports = function (app){
 
         // Conexão com o banco de dados.
         var connection = app.infra.connectionFactory();
-        var produtosBanco = new app.infra.ProdutosDAO(connection);
+        var produtosDAO = new app.infra.ProdutosDAO(connection);
 
         // Renderiza produtos do banco de dados.
-        produtosBanco.lista(function(err, results){
+        produtosDAO.lista(function(err, results){
             res.render('produtos/lista',{lista:results});
         });
 
@@ -17,4 +17,14 @@ module.exports = function (app){
     app.get('/produtos/form',function(req,res){
         res.render('produtos/form');
     })
+
+    app.post('/produtos/salva',function(req,res){
+        var produto = req.body;
+        console.log(produto);
+        var connection = app.infra.connectionFactory();
+        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        produtosDAO.salva(produto,function(erros,resultados){
+            res.render('produtos/lista');
+        });
+    });
 }

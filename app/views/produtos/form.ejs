@@ -1,6 +1,6 @@
 <html>
     <body>
-        <form action="produtos/salva" method="POST">
+        <form action="/produtos/salva" method="post">
             <div>
                 <label for="titulo">Título</label>
                 <input type="text" id="titulo" name="titulo" placeholder="Coloque o título do livro aqui" />
@@ -10,7 +10,7 @@
                 <input type="text" id="preco" name="preco" placeholder="R$ 150.00" />
             </div>
             <div>
-                <label for="titulo">Descrição</label><br />
+                <label for="descricao">Descrição</label><br />
                 <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"></textarea>
             </div>
             <input type="submit" value="Gravar" />
