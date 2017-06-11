@@ -3,7 +3,7 @@ module.exports = function (app){
 
         // Conexão com o banco de dados.
         var connection = app.infra.connectionFactory();
-        var produtosBanco = app.infra.produtosBanco(connection);
+        var produtosBanco = new app.infra.ProdutosDAO(connection);
 
         // Renderiza produtos do banco de dados.
         produtosBanco.lista(function(err, results){
@@ -12,15 +12,5 @@ module.exports = function (app){
 
         // Encerra conexão com o banco de dados.
         connection.end();
-    });
-
-    app.get('produtos/remove', function(){
-        var connection = app.infra.connectionFactory();
-        var produtosBanco = app.infra.connectionFactory;
-        var produto = produtosBanco.carrega(id,callback);
-
-        if (produto){
-            produtosBanco.remove(produto,callback);
-        }
     });
 }
