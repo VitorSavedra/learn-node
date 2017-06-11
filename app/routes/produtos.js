@@ -13,4 +13,8 @@ module.exports = function (app){
         // Encerra conexão com o banco de dados.
         connection.end();
     });
+
+    app.get('/produtos/form',function(req,res){
+        res.render('produtos/form');
+    })
 }
