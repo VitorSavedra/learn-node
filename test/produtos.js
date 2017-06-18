@@ -2,6 +2,25 @@ var express = require('../config/express')();
 var request = require('supertest')(express);
 
 describe('#ProdutosController', function () {
+
+    beforeEach(function (done) {
+        var conn = express.infra.connectionFactory();
+        conn.query("DELETE FROM livros", function (erro, result) {
+            if (!erro) {
+                done();
+            }
+        })
+    });
+
+    afterEach(function (done) {
+        var conn = express.infra.connectionFactory();
+        conn.query("DELETE FROM livros", function (erro, result) {
+            if (!erro) {
+                done();
+            }
+        })
+    });
+
     it('#Listagem JSON', function (done) {
         request.get('/produtos')
             .set('Accept', 'application/json')
