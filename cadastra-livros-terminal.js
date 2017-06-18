@@ -19,7 +19,7 @@ var client = http.request(configuracoes, function (res) {
 });
 
 var produto = {
-    titulo: 'Mais sobre Node',
+    titulo: '',
     descricao: 'Node, javascript e um pouco sobre HTTP',
     preco: 100
 }
