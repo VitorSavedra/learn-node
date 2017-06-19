@@ -6,7 +6,7 @@ function createDBConnection() {
             host: 'localhost',
             user: 'root',
             password: 'test',
-            database: 'projetoNode'
+            database: 'projetoNodes'
         });
     }
     if (process.env.NODE_ENV == 'test') {
